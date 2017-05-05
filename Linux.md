@@ -334,5 +334,58 @@ HISTSIZE: 命令存储最大的历史大小（1000条）
 ### 组管理
 1. groupadd,groupdel,groupmod,gpasswd
 
-### 权限管理
-1. chown，chgrp，chmod
+# ////////////////////04_01///////////////////////////////
+
+## useradd [options] USERNAME
+1. -u UID
+2. -g GID (基本组)
+3. —G GID,...(附加组)
+4. -c "COMMENT" 指定注视信息
+5. -d /path/to/somedirectory 指定某一个目录
+6. /etc/shells: 指定了当前系统可用的安全shell
+7. -d shell
+8. -m -k  强制给用户添加家目录
+
+## 环境变量
+1. PATH
+2. HISTSIZE
+3. SHELL
+
+## userdel：
+1. userdel [options] USERNAME -r:同时删除用户的家目录  userdel -r user2
+2. id:查看用户的属性信息
+3. -u
+4. -g
+5. -G
+6. -n
+
+## finger:查看用户账号信息
+1. finger USERNAME
+
+## 修改用户账号属性 usermod
+1. 修改uid -u UID
+2. 修改基本组 -g GID
+3. -a -G:不使用-a选项，会覆盖此前的目录
+4. -d -m：
+5. -s
+6. 更改用户名 -l
+7.-L：锁定账号，不能登陆
+8.-U；解锁账号
+9. chsh：修改用户的shell
+10.chfn：修改用户的注视信息
+
+## 密码管理
+1.passwd [USERNAME]
+2. --stdin
+3.-l
+4.-n
+5.-d 删除用户密码
+6. pwck 检查密码的完整性
+
+## 组管理
+1. groupadd 创建组
+2. groupadd 1）-g GID 2）-r：添加为系统组
+3. groupmod 1）-g GID 制定id 2）-n：GRPNAME 修改用户名
+4. groupdel 删除组
+5. gpasswd： 给组加密码
+6. newgrp GRPNAME <-->exit
