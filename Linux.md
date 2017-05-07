@@ -389,3 +389,25 @@ HISTSIZE: 命令存储最大的历史大小（1000条）
 4. groupdel 删除组
 5. gpasswd： 给组加密码
 6. newgrp GRPNAME <-->exit
+
+# ////////////////////04_02///////////////////////////////
+## 权限管理：
+1. r:
+2. w:
+3. x：
+
+### 三类用户
+1. 1)属主 2）属组 3)其他用户
+
+### 改变用户属主，只有管理员权限才能改变文件的属主
+1. chown username file,....== chown hadoop /tmp/abc
+2. -R:修改目录以及内部文件的属性
+3. --reference=/path/to/somefile file,...
+4. chgrp username file,....== chown hadoop /tmp/abc 1) -R:修改目录以及内部文件的属性 2)--reference=/path/to/somefile file,...
+7. chgrp GRPNAME file... 1)-R 2)--reference=/path/to/somefile file....
+8. chown USERNAME:GRPNAME file,....
+
+### 修改文件的权限 chmod
+1. 修改三类用户的权限 1)chmod MODE file,... 2)-R 3)--reference=/path/to/somefile file,...
+2. 修改某类用户或某些类用户权限 1)u,g,o,a chmod 用户类别=mode file,...
+3. 修改某类的用户的某位或某些权限 1)u,g,o,a chmod 用户类别+|— mode file,...
